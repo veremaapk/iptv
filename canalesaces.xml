@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<item>
+<title>[COLOR red] Deportes Acestream[/COLOR] ==[COLOR red] [addon PLEXUS • Acestream][/COLOR] ==</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+	<title>[[COLOR red] [makelist.param1][/COLOR] : [COLOR yellow] [makelist.param2][/COLOR][COLOR gold]- [makelist.param4][/COLOR] [B] [COLOR lime][makelist.param3][/B] [/COLOR]</title>
+<link>plugin://program.plexus/?url=[makelist.param5]&amp;mode=1&amp;name=Deportes Catoal</link>
+]]></listrepeat>
+<expres><![CDATA[text-right align-middle">(.*?)<[\w\W\s]{0,56}>(.*?)<[\w\W\s]{0,50}>(.*?)<[\w\W\s]{0,56}>(.*?)<[\w\W\s]{0,115}acestream://(.*?)"]]></expres>
+<page>http://www.acesoplisting.in/</page>
+<agent>Mozilla</agent>
+</regex>
+<thumbnail>http://www.acesoplisting.in/images/AceListingLogo.png</thumbnail>
+</item>	
+
+<item>
+<title>[COLOR red] Canales Elgoles[/COLOR] ==[COLOR red] [addon PLEXUS • Acestream][/COLOR] ==</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<item>
+<title>[[COLOR red][B]Canal [/B] [COLOR gold][makelist.param1][/COLOR]</title>
+<link>plugin://program.plexus/?url=$doregex[hash]&amp;mode=1&amp;name=Catoal[makelist.param1]</link>
+			<regex>
+			<name>hash</name> 
+			<expres>this.loadPlayer\("(.*?)"</expres>
+			<page>http://elgoles.ru/canal-[makelist.param1]/</page>
+			<referer>http://elgoles.ru/</referer>
+			<Agent>Mozilla</Agent>
+<referer>http://www.arenavision.in</referer>
+<setcookie>beget=begetok</setcookie>
+			</regex>
+			<thumbnail>http://veremaspain.hol.es/addon/V3klE56.png</thumbnail>
+</item>	
+]]></listrepeat>
+<expres>elgoles.ru/canal-(.*?)\/"</expres>
+<page>http://elgoles.ru/</page>
+<Agent>Mozilla</Agent>
+<referer>http://www.arenavision.ru</referer>
+<setcookie>beget=begetok</setcookie>
+</regex>
+<thumbnail></thumbnail>
+</item>
+
+<item>
+<title>[COLOR red] ArenaVision[/COLOR] ==[COLOR red] [addon PLEXUS • Acestream][/COLOR] ==</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<item><title>[[COLOR lime] [makelist.param2][/COLOR][COLOR red]   [Addon PLEXUS • Acestream][/COLOR]</title>
+<link>plugin://program.plexus/?url=$doregex[hash]&amp;mode=1&amp;name=Verema + [makelist.param2]</link>
+			<regex>
+			<name>hash</name> 
+			<expres>this.loadPlayer\("(.*?)"</expres>
+			<page>http://www.arenavision.ru/[makelist.param1]</page>
+			<referer>http://www.arenavision.ru</referer>
+			<setcookie>beget=begetok</setcookie>
+			</regex>
+			<thumbnail>http://veremaspain.hol.es/addon/V3klE56.png</thumbnail>
+</item>	
+]]></listrepeat>
+<expres><![CDATA[href="\/(a.*?)">(.*?)<]]></expres>
+<page>http://arenavision.ru/</page>
+<Agent>Mozilla</Agent>
+<referer>http://www.arenavision.ru</referer>
+<setcookie>beget=begetok</setcookie>
+</regex>
+<thumbnail>http://veremaspain.hol.es/addon/V3klE56.png</thumbnail>
+</item>
+
+<item>
+<title>[COLOR red] LA LIGA [/COLOR]</title>
+<link>plugin://program.plexus/?url=$doregex[hash]&amp;mode=1&amp;name=La Liga</link>
+<regex>
+<name>hash</name>
+<expres>this.loadPlayer\("(.*?)"</expres>
+<page>http://freelive365.com/tv/ace/es/liga.php</page>
+<referer>http://freelive365.com</referer>
+<setcookie>beget=begetok</setcookie>
+</regex>
+<thumbnail>http://veremaspain.hol.es/addon/V3klE56.png</thumbnail>
+<fanart>http://4.bp.blogspot.com/-rLHvP5fvBHg/Vf0isvJSGhI/AAAAAAAAG1U/DurLKrJ1Y5A/s640/plexus-kodi.jpg</fanart>
+</item>
+
+<item>
+<title>[COLOR red] España[/COLOR]</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+	<title>[[COLOR red] [makelist.param2][/COLOR]</title>			
+	<link>plugin://program.plexus/?url=$doregex[hash]&amp;mode=1&amp;name=Verema( [makelist.param2] )</link>
+	
+	<regex>
+	<name>hash</name>
+	<expres>this.loadPlayer\("(.*?)"</expres>
+	<page>$doregex[URL]</page>
+	</regex>
+	<regex>
+	<name>URL</name>
+	<expres>allowfullscreen src="(.*?)"</expres>
+	<page>http://freelive365.com/[makelist.param1]</page>
+	</regex>
+		
+	<thumbnail>http://freelive365.com/[makelist.param3]</thumbnail>
+]]></listrepeat>
+<expres>href='(.*?)' [\w\W\s]{0,65}70%>(.*?)<[\w\W\s]{0,25}src="(.*?)"</expres>
+<page>http://freelive365.com/live_info.php?id=6</page>
+</regex>
+<thumbnail>http://veremaspain.hol.es/addon/V3klE56.png</thumbnail>
+<fanart>http://4.bp.blogspot.com/-rLHvP5fvBHg/Vf0isvJSGhI/AAAAAAAAG1U/DurLKrJ1Y5A/s640/plexus-kodi.jpg</fanart>
+</item>

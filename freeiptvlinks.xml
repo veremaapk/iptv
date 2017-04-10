@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<item>
+<title>Verema IPTV</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[makelist.param1]</title>
+<link>plugin://plugin.video.f4mTester/?streamtype=TSDOWNLOADER&amp;url=[makelist.param2].ts&amp;name=Verema - [makelist.param1]</link>
+<thumbnail>NA</thumbnail>
+]]></listrepeat>
+<expres>#EXTINF:-.*?,(.*).*\n.*?(?=http|rtmp|rtsp|mms)(.*[\d|\w])</expres>
+<page>http://www.exabytetv.info/ESP.m3u</page>
+<cookieJar></cookieJar>
+</regex>
+</item>
+
+<item>
+<title>IPTV Wolf Pack</title>
+<link>http://Ignoreme</link>
+<thumbnail>http://i.imgur.com/9hmmHaq.png</thumbnail>
+<fanart>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Philips_PM5544.svg/300px-Philips_PM5544.svg.png</fanart>
+<externallink>view-source:http://beaub.srve.io/tv/New%20folder/Other%20country.xml</externallink>	
+</item>
+
+<item>
+<title>TeamBlue</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+	<title>[makelist.param3]  ([makelist.param2])</title>
+	<link>[makelist.param4]</link>
+<thumbnail>[makelist.param1]</thumbnail>
+<fanart>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Philips_PM5544.svg/300px-Philips_PM5544.svg.png</fanart>
+]]></listrepeat>
+<expres>EXTINF:-.*?tvg-logo="(.*)".*group-title="(.*)".*,(.*?)\s\(.*\n(.*)</expres>
+<page>&#104;&#116;&#116;&#112;&#115;://&#114;&#097;&#119;&#046;&#103;&#105;&#116;&#104;&#117;&#098;&#117;&#115;&#101;&#114;&#099;&#111;&#110;&#116;&#101;&#110;&#116;&#046;&#099;&#111;&#109;/&#116;&#101;&#097;&#109;&#098;&#108;&#117;&#101;&#054;&#053;/&#076;&#073;&#083;&#084;&#065;&#083;/&#109;&#097;&#115;&#116;&#101;&#114;/&#076;&#073;&#083;&#084;&#065;&#095;&#083;&#083;&#073;&#080;&#084;&#086;</page>
+</regex>
+<thumbnail>http://i.imgur.com/9hmmHaq.png</thumbnail>
+<fanart>https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Philips_PM5544.svg/300px-Philips_PM5544.svg.png</fanart>
+</item>	
+
+<item>
+<title>[ [COLOR blue]C[COLOR yellow]T[COLOR red]A ] [COLOR cyan]IPTV[COLOR red] La[COLOR yellow] Nueva[COLOR red] Televisión</title>
+<link>http://Ignoreme</link>
+<thumbnail>http://www.adslzone.net/app/uploads/2015/07/apertura-canales-movistar-plus.jpg</thumbnail>
+<fanart>http://www.adslzone.net/app/uploads/2015/07/apertura-canales-movistar-plus.jpg</fanart>
+<externallink>&#104;&#116;&#116;&#112;&#115;://&#114;&#097;&#119;&#046;&#103;&#105;&#116;&#104;&#117;&#098;&#117;&#115;&#101;&#114;&#099;&#111;&#110;&#116;&#101;&#110;&#116;&#046;&#099;&#111;&#109;/&#067;&#097;&#114;&#108;&#101;&#115;&#116;&#111;/&#105;&#112;&#116;&#118;/&#109;&#097;&#115;&#116;&#101;&#114;/&#073;&#080;&#084;&#086;&#046;&#120;&#109;&#108;</externallink>	
+</item>
+
+<item>
+<title>IPTV Ultra</title>
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+   <title> [makelist.param2]</title>
+   <link>$doregex[makelist2]</link>
+]]></listrepeat>
+<expres><![CDATA[href="([^"]+)">(.*?)</a]]></expres>
+<page>http://www.iptvultra.com/</page>
+</regex>
+<regex>
+<name>makelist2</name>
+<listrepeat><![CDATA[
+   <title> [makelist2.param1]</title>
+   <link>plugin://plugin.video.f4mTester/?url=$doregex[getUrl]&amp;streamtype=TSDOWNLOADER&amp;name=Verema [makelist2.param1]&amp;maxbitrate=0&amp;Buffer=20971520</link>
+]]></listrepeat>
+<expres><![CDATA["\d+.{3}(.*?)\s\[.+?\](http.*?)"]]></expres>
+<page>[makelist.param1]?get=download_m3u8</page>
+</regex>
+<regex>
+<name>getUrl</name>
+<expres>$pyFunction:urllib.quote_plus('[makelist2.param2]|User-Agent=VLC/2.2.1 LibVLC/2.2.17&amp;Icy-MetaData=1')</expres>
+<page></page>
+<cookieJar></cookieJar>
+</regex>
+<thumbnail>https://pbs.twimg.com/profile_images/745047225408065536/k6lIDLxr.jpg</thumbnail>
+<fanart>http://redeneobux.com/wp-content/uploads/2016/11/8.jpg</fanart>
+</item>
+
+<item>
+<title>Sat IPTV</title>
+<link>http://Ignoreme</link>
+<thumbnail>http://satip-tv.com/images/logo.png</thumbnail>
+<fanart>http://satip-tv.com/images/logo.png</fanart>
+<externallink>&#104;&#116;&#116;&#112;&#115;://&#114;&#097;&#119;&#046;&#103;&#105;&#116;&#104;&#117;&#098;&#117;&#115;&#101;&#114;&#099;&#111;&#110;&#116;&#101;&#110;&#116;&#046;&#099;&#111;&#109;/&#067;&#097;&#114;&#108;&#101;&#115;&#116;&#111;/&#105;&#112;&#116;&#118;/&#109;&#097;&#115;&#116;&#101;&#114;/&#105;&#112;&#116;&#118;&#115;&#097;&#116;&#046;&#120;&#109;&#108;</externallink>	
+</item>
+
+<!--
+<item>
+<title>[COLOR blue]C[COLOR yellow]T[COLOR red]A [COLOR cyan]M+Todos</title>
+<link>http://Ignoreme</link>
+<thumbnail>http://1.bp.blogspot.com/-zuHhRR4oXxA/TlqwYUhrmPI/AAAAAAAAAF0/IdH71AKySSk/s1600/MOVISTAR-logo+terformado.jpg</thumbnail>
+<fanart>http://1.bp.blogspot.com/-zuHhRR4oXxA/TlqwYUhrmPI/AAAAAAAAAF0/IdH71AKySSk/s1600/MOVISTAR-logo+terformado.jpg</fanart>
+<externallink>&#104;&#116;&#116;&#112;&#115;://&#114;&#097;&#119;&#046;&#103;&#105;&#116;&#104;&#117;&#098;&#117;&#115;&#101;&#114;&#099;&#111;&#110;&#116;&#101;&#110;&#116;&#046;&#099;&#111;&#109;/&#067;&#097;&#114;&#108;&#101;&#115;&#116;&#111;/&#105;&#112;&#116;&#118;/&#109;&#097;&#115;&#116;&#101;&#114;/&#077;&#111;&#118;&#105;&#115;&#116;&#097;&#114;%&#050;&#066;&#105;&#112;&#116;&#118;%&#050;&#048;&#107;&#111;&#100;&#105;&#046;&#109;&#051;&#117;</externallink>	
+</item>
+
+<item>
+<title>[COLOR blue]C[COLOR yellow]T[COLOR red]A [COLOR cyan]M+Todos Opc.2</title>       
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[COLOR blue]C[COLOR yellow]T[COLOR red]A ** [COLOR lime][makelist.param1] **</title>       
+<link>http://cdn.sitenow.me/live/[makelist.param2]/chunklist.m3u8|User-Agent=Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0&amp;Accept-Encoding=gzip,deflate&amp;DNT=1&amp;Referer=http://www.playerapp1.pw/&amp;Connection=keep-alive&amp;Icy-Metadata=0</link>
+<thumbnail>http://1.bp.blogspot.com/-zuHhRR4oXxA/TlqwYUhrmPI/AAAAAAAAAF0/IdH71AKySSk/s1600/MOVISTAR-logo+terformado.jpg</thumbnail>
+]]></listrepeat> 
+<expres>tdt="(.*?)"  name="(.*?)",</expres>
+<page>&#104;&#116;&#116;&#112;&#115;://&#114;&#097;&#119;&#046;&#103;&#105;&#116;&#104;&#117;&#098;&#117;&#115;&#101;&#114;&#099;&#111;&#110;&#116;&#101;&#110;&#116;&#046;&#099;&#111;&#109;/&#067;&#097;&#114;&#108;&#101;&#115;&#116;&#111;/&#076;&#105;&#115;&#116;&#097;&#115;/&#109;&#097;&#115;&#116;&#101;&#114;/&#077;&#111;&#118;&#105;&#115;&#116;&#097;&#114;/&#115;&#101;&#114;&#118;&#101;&#114;&#115;&#046;&#116;&#120;&#116;</page>
+<agent>Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2-Git:20151019-02e7013</agent>
+</regex>
+<thumbnail>http://www.adslzone.net/app/uploads/2015/07/apertura-canales-movistar-plus.jpg</thumbnail>
+<fanart>http://www.adslzone.net/app/uploads/2015/07/apertura-canales-movistar-plus.jpg</fanart>
+</item>
+
+<item>
+<title>[COLOR blue]C[COLOR yellow]T[COLOR red]A [COLOR cyan]M+Todos Opc.3</title>       
+<link>$doregex[makelist]</link>
+<regex>
+<name>makelist</name>
+<listrepeat><![CDATA[
+<title>[COLOR blue]C[COLOR yellow]T[COLOR red]A ** [COLOR lime][makelist.param1] **</title>       
+<link>http://cdn.sitenow.me/live/[makelist.param2]/chunklist.m3u8|User-Agent=Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0&amp;Accept-Encoding=gzip,deflate&amp;DNT=1&amp;Referer=http://www.playerapp1.pw/&amp;Connection=keep-alive&amp;Icy-Metadata=0</link>
+<thumbnail>http://1.bp.blogspot.com/-zuHhRR4oXxA/TlqwYUhrmPI/AAAAAAAAAF0/IdH71AKySSk/s1600/MOVISTAR-logo+terformado.jpg</thumbnail>
+]]></listrepeat>
+<expres>tdt3="(.*?)"  name="(.*?)",</expres>
+<page>&#104;&#116;&#116;&#112;&#115;://&#114;&#097;&#119;&#046;&#103;&#105;&#116;&#104;&#117;&#098;&#117;&#115;&#101;&#114;&#099;&#111;&#110;&#116;&#101;&#110;&#116;&#046;&#099;&#111;&#109;/&#067;&#097;&#114;&#108;&#101;&#115;&#116;&#111;/&#076;&#105;&#115;&#116;&#097;&#115;/&#109;&#097;&#115;&#116;&#101;&#114;/&#077;&#111;&#118;&#105;&#115;&#116;&#097;&#114;/&#115;&#101;&#114;&#118;&#101;&#114;&#115;&#046;&#116;&#120;&#116;</page>
+<agent>Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2-Git:20151019-02e7013</agent>
+</regex>
+<thumbnail>http://www.adslzone.net/app/uploads/2015/07/apertura-canales-movistar-plus.jpg</thumbnail>
+<fanart>http://www.adslzone.net/app/uploads/2015/07/apertura-canales-movistar-plus.jpg</fanart>
+</item>-->
+
+
+<item>
+<title>Biensports</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Biensports</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/beinsports/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Ex-Yu</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Ex-Yu</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/ex-yu/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>France</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :France</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/france/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>German</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :German</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/german/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Italy</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Italy</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/italy/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Netherlands</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Netherlands</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/netherlands/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Portugal</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Portugal</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/portugal/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Russia</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Russia</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/russia/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Scandinavia</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Scandinavia</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/scandinavia/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Spain</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Spain</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/spain/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Sports</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Sports</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/sports/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Turkey</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Turkey</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/turkey/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Uk</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Uk</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/uk/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
+
+<item>
+<title>Usa</title>
+<link>$doregex[makelist]</link>				
+<regex><name>makelist</name>
+<listrepeat><![CDATA[
+<title>Servidor :Usa</title>
+				<link>ignorme</link>
+				<externallink>[makelist.param1]$$TSDOWNLOADER$$|User-Agent=Kodi/15.2 (Windows NT 6.1) App_Bitness/32 Version/15.2 Git:2015-10-19-02e7013</externallink>
+]]></listrepeat>
+<expres><![CDATA[#$pyFunction
+import requests
+import re
+def GetLSProData(page_data,Cookie_Jar,m,url='http://www.freeiptvlinks.net/category/iptv-links/usa/'): 
+ link=requests.get(url).text
+ matchpag = re.compile('hellip; <a href="(http://www.freeiptvlinks.net/.*?)"').findall(link)
+ return matchpag
+]]></expres>
+<page></page>
+<referer></referer>
+<agent>Mozilla/5.0 (X11 Linux i686 rv:42.0) Gecko/20100101 Firefox/42.0 Iceweasel/42.0</agent>
+<cookieJar></cookieJar></regex>
+</item>
